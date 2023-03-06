@@ -1,0 +1,10 @@
+// You are given a number n
+// You are required to print the counting from n to 1 without using loops.
+
+void print_dec(int n){
+	if(n==0){
+		return ; 
+	}
+	cout<< n <<endl ; 
+	print_dec(n-1) ;
+}
