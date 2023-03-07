@@ -1,0 +1,16 @@
+// You are given a number x.
+// You are given another number n.
+// You are required to calculate x raised to the power n.
+
+int log_pow(int x, int n){
+	int f ;
+	if(n == 0){
+		return 1 ;
+	}
+	f = log_pow(x,n/2) ;
+	int f1 = f*f ;
+	if( n % 2 == 1){
+       f1 = f1 * x ;		
+	}
+	return f1 ; 
+}
