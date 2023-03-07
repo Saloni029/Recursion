@@ -1,0 +1,11 @@
+// You are given a number n, representing the size of array a.
+// You are given n numbers, representing elements of array.
+// You are required to print the elements of array from end to beginning each in a separate line.
+
+void displayArr(int arry[] , int idx,int size){
+	if(idx == size ){ 
+    	return ; 
+	}   
+	cout << arry[size - idx - 1] << endl ; 
+	displayArr(arry, idx+1 ,size) ; 
+}
