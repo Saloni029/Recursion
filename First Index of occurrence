@@ -1,0 +1,18 @@
+// You are given a number n, representing the count of elements.
+// You are given n numbers.
+// You are given a number x.
+// You are required to find the first index at which x occurs in the array a.
+// If x exists in the array, print the first index where it is found otherwise print -1.
+
+int first_occ(int arry[] , int idx,int size,int x){
+	if(idx == size){
+		return -1 ;
+	}
+	if(arry[idx] == x){
+		return  idx ; 
+	}
+	else{
+		int fiisa = first_occ(arry, idx+1 ,size,x) ; 
+		return fiisa ; 
+	}
+}
