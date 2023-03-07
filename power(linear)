@@ -1,0 +1,10 @@
+// You are given a number x.
+// You are given another number n.
+// You are required to calculate x raised to the power n.
+
+int linear_pow(int x, int n){
+	if(n==1){
+		return x ;
+	}
+	return x*linear_pow(x,n-1);
+}
