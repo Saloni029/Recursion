@@ -1,0 +1,16 @@
+// You are given a number n, representing the count of elements.
+// You are given n numbers.
+// You are required to print maximum of the input.
+
+int maxArr(int arry[] , int idx,int size){
+	if(idx == size-1){
+		return arry[idx];
+	}
+	int misa = maxArr(arry, idx+1 ,size) ; 
+	if(arry[idx] > misa){
+		return arry[idx] ; 
+	}
+	else{
+		return misa ; 
+	}
+}
