@@ -1,0 +1,13 @@
+// There are three towers. Tower 1 has n disks, where n is a positive number. Tower 2 and 3 are empty.
+// The disks are increasingly placed in terms of size such that smalllest disk is on top and largest disk is at bottom.
+// Move 1 disk at a time.
+// You can only move the disk at the top.
+
+void toh(int disk ,int t1 ,int t2 ,int t3 ){
+	if(disk == 0){
+		return ;
+	}
+	toh( disk-1, t1, t3, t2) ; 
+	cout << disk << "[" << t1 << "->" << t2 << "]" << endl;
+	toh( disk-1, t3, t2, t1) ; 
+}
