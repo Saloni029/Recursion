@@ -1,0 +1,20 @@
+// You are given a number n, representing the count of elements.
+// You are given n numbers.
+// You are given a number x.
+// You are required to print all the indexes at which x occurs in the array a.
+// If x exists in the array, print all the indexes where it is found otherwise print -1.
+
+int[] all_occ(int[] arry, int idx, int size, int x, int fsf){
+	if(idx == size){
+		return new int[fsf] ; 
+	}  
+	else if(arry[idx]==x){
+		int[] allin = all_occ(arry, idx+1 , size, x, fsf+1) ;
+		allin[fsf] = idx ; 
+		return allin ; 
+	}
+	else{
+		int[] allin = all_occ(arry, idx+1 , size, x, fsf) ;
+    return allin ; 
+	}
+}
