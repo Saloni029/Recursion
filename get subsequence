@@ -1,0 +1,21 @@
+// You are given a string str.
+// Complete the body of getSS function to calculate all subsequences of str.
+
+list<string> getSS(string str){
+      if(str.size()==0){
+        list<string> bres ; 
+        bres.push_back("") ;
+        return bres ;
+      }
+      char ch = str.at(0) ; 
+      string leftstr = str.substr(1) ; 
+      list<string> res = getSS(leftstr) ; 
+      list<string> myres ;
+      for(string s: res){
+          myres.push_back(" "+s) ;
+      }
+       for(string s: res){
+          myres.push_back(ch+s) ;
+      }
+      return myres ; 
+}
