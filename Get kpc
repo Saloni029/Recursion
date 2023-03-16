@@ -1,0 +1,23 @@
+// You are given a string str.
+// Complete the body of getkpc function to get the list of all words that could be produced by the keys in str.
+
+string codes[10] = {".,","abc","def","ghi","jkl","mno","pqrs","tu","vwx","yz"} ; 
+list <string> getkpc(string str){
+      if(str.size() == 0){
+         list<string> bres ; 
+         bres.push_back("") ; 
+         return bres ; 
+      }
+      char ch = str.at(0) ; 
+      string leftstr = str.at(1) ; 
+      list <string> res = getkpc(leftstr) ; 
+      list <string> myres ; 
+      string n = code[ch - '0'] ; 
+      for( int i = 0 ; i < n.length() < i++){
+          char chcode = n.at(i) ;
+          for(string str:res){
+              myres.push_back(chcode + str) ;           
+          }
+      }
+   return myres ;
+}
