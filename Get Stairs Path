@@ -1,0 +1,29 @@
+// You are given a number n representing number of stairs in a staircase.
+// You are standing at the bottom of staircase. You are allowed to climb 1 step, 2 steps or 3 steps in one move.
+//Complete the body of getStairPaths function - without changing signature - to get the list of all paths that can be used to climb the staircase up.
+
+list<string> getStairPaths(int n){
+	if(n == 0){
+		list<string>bres ;
+		bres.push_back("") ; 
+		return bres ;
+	}
+	else if(n < 0){
+		list<string>bres ;
+		return bres ;
+	}
+	list<string> p1 = getStairPaths(n-1) ; 
+	list<string> p2 = getStairPaths(n-2) ; 
+	list<string> p3 = getStairPaths(n-3) ; 
+	list<string> tp ; 
+	for (string paths:p1){
+		tp.push_back('1' + paths) ; 
+	}
+	for (string paths:p2){
+		tp.push_back('2'+ paths) ; 
+	}
+	for (string paths:p1){
+		tp.push_back('3' + paths) ; 
+	}
+	return tp ; 
+}
