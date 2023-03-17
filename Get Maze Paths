@@ -1,0 +1,28 @@
+//  You are given a number n and a number m representing number of rows and columns in a maze.
+// You are standing in the top-left corner and have to reach the bottom-right corner. Only two moves are allowed 'h' (1-step horizontal) and 'v' (1-step vertical).
+// Complete the body of getMazePath function - without changing signature - to get the list of all paths that can be used to move from top-left to bottom-right.
+
+list<string> getMazePaths(int sr, int sc, int dr, int dc){
+	  list<string> hor ;
+	  list<string> ver ; 
+	  if(sr==dr && sc==dc){
+	 	   list<string>bres ;
+	 	   bres.push_back("") ; 
+		   return bres ;
+	  } 
+	  if(sc < dc){
+	 	   hor = getMazePaths(sr, sc+1, dr, dc) ;
+	  }
+	  if(sr < dr){
+	 	   ver = getMazePaths(sr+1, sc, dr, dc) ;
+	  }
+	  list<string> paths ;
+	  for(string path:hor){
+	 	   paths.push_back("h" + path) ; 
+	  }
+	  for(string path:ver){
+	 	   paths.push_back("v" + path) ; 
+	  }
+	return paths ; 
+}
+
