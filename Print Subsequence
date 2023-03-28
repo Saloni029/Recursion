@@ -1,0 +1,14 @@
+// You are given a string str.
+// Complete the body of printSS function - without changing signature - to calculate and print all subsequences of str.
+
+void Printsub(string str1, string str2){
+	 if(str1.length()==0){
+		  cout << str2 ; 
+		  return ; 
+	 }
+	 char ch = str1.at(0) ; 
+	 string str = str1.substr(1) ; 
+	 Printsub(str, str2+"") ; 
+   cout << endl ; 
+	 Printsub(str, str2+ch) ; 
+}
