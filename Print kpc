@@ -1,0 +1,29 @@
+// You are given a string str. The string str will contains numbers only, where each number stands for a key pressed on a mobile phone.
+// The following list is the key to characters map
+    0 -> .;
+   1 -> abc
+   2 -> def
+   3 -> ghi
+   4 -> jkl
+   5 -> mno
+   6 -> pqrs
+   7 -> tu
+   8 -> vwx
+   9 -> yz
+// Complete the body of printKPC function - without changing signature - to print the list of all words that could be produced by the keys in str.
+
+string codes[10] = {".,","abc","def","ghi","jkl","mno","pqrs","tu","vwx","yz"} ; 
+void Printkpc(string str1, string str2){
+	 if(str1.length()==0){
+		 cout << str2 ;
+		 return ; 
+	 } 
+	 char ch = str1.at(0) ; 
+	 string str = str1.substr(1) ; 
+	 string n = codes[ch -'0'] ; 
+	 for(int i = 0; i < n.length() ; i++){
+		   char chcode = n.at(i) ; 
+	     Printkpc(str, str2 + chcode) ; 	
+	     cout << endl ;
+	  } 
+}
