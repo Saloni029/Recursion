@@ -1,0 +1,14 @@
+// You are given a string str.
+// Complete the body of printPermutations function - without changing signature - to calculate and print all permutations of str.
+
+void printPer(string p, string q){
+	  if(p.length()==0){
+		   cout << q << endl ;
+		   return ; 
+	   }
+	  for(int i=0 ; i<p.length() ; i++){
+	 	    char c = p.at(i) ; 
+	 	    string s= p.substr(0,i) + p.substr(i+1) ;
+	 	    printPer(s, q+c) ; 
+	   }
+}
